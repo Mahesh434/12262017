@@ -1,13 +1,17 @@
 <header>
-  This is Header
+  <h1 class="title">
+    <img src="/assets/images/logo.ico" class="logo">
+    Project K Title
+  </h1>
+  <label class="float-right">Welcome</label>
 </header>
-<section>
+<section (click)="closeDropDowns($event)">
   <div id="container">
     <div id="nav-container">
       <nav>
         <ul class="parent-menu">
-          <li *ngFor="let menuItem of menuItems" (click)="showHideChilds(menuItem)">
-            <a [ngClass]="['active']">
+          <li *ngFor="let menuItem of menuItems" (click)="showHideChilds(menuItem, $event)">
+            <a [ngClass]="!menuItem.hideChildren ? 'active': ''">
               <i [ngClass]="[menuItem.icon]"></i>
               <span>{{menuItem.name}}</span>
               <i class="fa fa-angle-down pull-right animated flipInX" *ngIf="menuItem.children.length !== 0 && menuItem.hideChildren"></i>
@@ -16,7 +20,7 @@
             </a>
             <ul class="child-menu" *ngIf="menuItem.children.length !== 0 && !menuItem.hideChildren">
               <li *ngFor="let childMenu of menuItem.children">
-                <a href="{{menuItem.route+childMenu.route}}">
+                <a routerLink="{{menuItem.route+childMenu.route}}">
                   <i [ngClass]="[childMenu.icon]"></i>
                   <span>{{childMenu.name}}</span>
                 </a>

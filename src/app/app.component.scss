@@ -1,68 +1,86 @@
 @import 'src/assets/scss/constants';
-
-header{
-    box-shadow: $box-shadow;
-    position: fixed;
-    width: 100vw;
-    height: $header-height;
-    background-color: white;
+header {
+  box-shadow: $box-shadow;
+  position: fixed;
+  width: 100vw;
+  height: $header-height;
+  background-color: white;
+  line-height: $header-height;
+  padding: 0 20px;
+  .title {
+    margin: 0;
+    float: left;
+    font-size: $logo-height - 10px;
+    .logo {
+      vertical-align: middle;
+      margin-top: -10px;
+      height: $logo-height;
+    }
+  }
 }
 
-#container{
-    background-color: #f5f5f5;
-    padding-bottom: $footer-height;
-    padding-top: $header-height;
+#container {
+  background-color: #f5f5f5;
+  padding-bottom: $footer-height;
+  padding-top: $header-height;
 }
 
-#nav-container{
-    background-color: white;
-    box-shadow: $box-shadow;
+#nav-container {
+  background-color: $primary-color;
+  box-shadow: $box-shadow;
 }
 
-#page-container{    
-    padding: 10px;
+#page-container {
+  padding: 30px 10px;
+  min-height: 50vh;
 }
 
 .parent-menu {
-    padding: 0;
-    margin: 0;
-    li {
-        list-style: none;
-        display: inline-block;
-        position: relative;
-        a {
-            display: inline-block;
-            text-decoration: none;
-            color: black;
-            &.active,
-            &:hover{
-                color: white;
-                background-color: $primary-color;            
-            }
-            .fa{
-                font-size: 16px;                
-                padding: 10px;
-            }
-        }
-    }
-   .child-menu{
-        box-shadow: $box-shadow;
-        border-top: 1px solid $primary-color;
-        padding: 0;
-        position: absolute;
+  padding: 0;
+  margin: 0;
+  li {
+    list-style: none;
+    display: inline-block;
+    position: relative;
+    a {
+      display: inline-block;
+      text-decoration: none;
+      color: white;
+      transition: all 0.2s;
+      &.active,
+      &:hover {
+        color: black;
         background-color: white;
-        min-width: 100%;
-        li{
-            display: block;
-            a {
-                display: block;
-            }
-        }        
+      }
+      .fa {
+        font-size: 18px;
+        padding: 15px 10px;
+      }
     }
+  }
+  .child-menu {
+    box-shadow: $box-shadow;
+    padding: 0;
+    position: absolute;
+    background-color: white;
+    min-width: 100%;
+    li {
+      display: block;
+      a {
+        display: block;
+        color: black;
+        &.active,
+        &:hover {
+          color: white;
+          background-color: $primary-color;
+        }
+      }
+    }
+  }
 }
 
-footer{
-    height: $footer-height;
-    margin-top: -$footer-height;
-    background-color: white;
+footer {
+  height: $footer-height;
+  margin-top: -$footer-height;
+  background-color: white;
 }

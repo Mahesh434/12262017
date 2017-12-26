@@ -1,45 +1,55 @@
-body{
-    margin: 0;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    font-size: 14px;
+* {
+  box-sizing: border-box;
 }
 
-.form-table{
-    margin: 0 auto;
-    background-color: white;
-    padding: 10px;
+body {
+  margin: 0;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  font-size: 14px;
+  letter-spacing: 0.02em;
 }
 
-.form-table tr td{
-    padding: 5px;
+.form-table {
+  margin: 0 auto;
+  background-color: white;
+  padding: 20px 30px;
+  box-shadow: 1px 1px 3px 0px rgba(0, 0, 0, 0.2);
+}
+
+.form-table tr td {
+  padding: 5px;
 }
 
 input[type="text"],
-input[type="password"]{
-    padding: 4px 5px;
+input[type="password"] {
+  padding: 4px 5px;
 }
 
-.pk-btn{
-    border: none;
-    padding: 5px 15px;
-    border-radius: 15px;
-    outline: none;
-    cursor: pointer;
+.pk-btn {
+  border: none;
+  padding: 5px 15px;
+  border-radius: 15px;
+  outline: none;
+  cursor: pointer;
 }
 
-.pk-btn:hover{
-    opacity: 0.9;
+.pk-btn:hover {
+  opacity: 0.9;
 }
 
-.primary-btn{
-    background-color: #EE4938;
-    color: white;    
+.primary-btn {
+  background-color: #7eb73d;
+  color: white;
 }
 
-.right-text{
-    text-align: right;
+.right-text {
+  text-align: right;
 }
 
-.center-text{
-    text-align: center;
+.float-right {
+  float: right;
+}
+
+.center-text {
+  text-align: center;
 }

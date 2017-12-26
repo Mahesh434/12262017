@@ -5,6 +5,8 @@ import { LoginService } from '../login.service';
 
 import { ILogin, ILoggedInUser } from '../ILogin';
 
+import { PKMenu, PKMenuItem, PKCompleteMenu } from '../../app.routing';
+
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
@@ -25,15 +27,20 @@ export class LoginComponent implements OnInit {
       loginId: this.loginForm.value['email'],
       password: this.loginForm.value['password']
     };
-    this.loginService.validateLoginDetails(loginDetails)
-      .subscribe(loggedInDetails => {
-        if (loggedInDetails) {
-          this._router.navigateByUrl('/user/my-profile');
-          console.log(loggedInDetails.permissions);
-        }
-      }, error => {
-        console.log(error);
-      });
+
+    PKMenu[0] = PKCompleteMenu[3];
+    PKMenu[1] = PKCompleteMenu[2];    
+    this._router.navigateByUrl('/user/my-profile');
+    
+    // this.loginService.validateLoginDetails(loginDetails)
+    //   .subscribe(loggedInDetails => {
+    //     if (loggedInDetails) {
+    //       this._router.navigateByUrl('/user/my-profile');
+    //       console.log(loggedInDetails.permissions);
+    //     }
+    //   }, error => {
+    //     console.log(error);
+    //   });
   }
 
   ngOnInit() {

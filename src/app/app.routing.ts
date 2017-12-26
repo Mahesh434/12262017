@@ -53,7 +53,7 @@ export class AppRoutingModule {
 export const RoutingComponent = [LoginComponent, SignupComponent, ClientCreateComponent,
     ClientEditComponent, ClientDeleteComponent, UserCreateComponent, UserEditComponent, UserDeleteComponent, UserProfileComponent];
 
-export const PKMenu: PKMenuItem[] = [
+export const PKCompleteMenu: PKMenuItem[] = [
     { key: 'LOGIN', route: '/projectk', icon: 'fa fa-sign-in', name: 'Login', children: [], hideChildren: true },
     {
         key: 'CLIENT', route: '/client', icon: 'fa fa-address-book-o', name: 'Client', children: [
@@ -73,7 +73,11 @@ export const PKMenu: PKMenuItem[] = [
         key: 'USER_MY_PROFILE', route: '/user/my-profile', icon: 'fa fa-user-circle-o',
         name: 'My Profile', children: [], hideChildren: true
     }
-];
+]
+
+export const PKMenu: PKMenuItem[] = [
+        PKCompleteMenu[0]
+    ];
 
 export interface PKMenuItem {
     key: string;

@@ -18,9 +18,16 @@ export class AppComponent {
 
   menuItems: PKMenuItem[] = PKMenu;
 
-  showHideChilds(menuItem: PKMenuItem): void {
+  closeDropDowns(event: Event): void {
+    for (let i = 0; i < this.menuItems.length; i++) {
+      this.menuItems[i].hideChildren = true;
+    }
+  }
+
+  showHideChilds(menuItem: PKMenuItem, event: Event): void {
+    event.stopPropagation();
     if (menuItem.children.length === 0) {
-      this.router.navigateByUrl(menuItem.route);
+      this.router.navigate([menuItem.route]);
     }
     for (let i = 0; i < this.menuItems.length; i++) {
       if (menuItem.key === this.menuItems[i].key) {
