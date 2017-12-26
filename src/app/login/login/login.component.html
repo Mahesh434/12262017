@@ -1,0 +1,28 @@
+<form [formGroup]="loginForm" (ngSubmit)="login()">
+  <table class="form-table">
+    <tr>
+      <td>Email</td>
+      <td>
+        <input formControlName="email" type="text" placeholder="Email">
+      </td>
+    </tr>
+    <tr>
+      <td>Password</td>
+      <td>
+        <input formControlName="password" type="password" placeholder="Password">
+      </td>
+    </tr>
+    <tr>
+      <td>
+      <td colspan="2" class="right-text">
+        <button class="pk-btn secondary-btn" type="reset">Clear</button>
+        <button class="pk-btn primary-btn" type="submit">Sign in</button>
+      </td>
+    </tr>
+    <tr>
+      <td colspan="2" class="center-text">
+        <a href="/projectk/signup">Don't have an account? Sign up</a>
+      </td>
+    </tr>
+  </table>
+</form>

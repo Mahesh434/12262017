@@ -1,0 +1,36 @@
+<header>
+  This is Header
+</header>
+<section>
+  <div id="container">
+    <div id="nav-container">
+      <nav>
+        <ul class="parent-menu">
+          <li *ngFor="let menuItem of menuItems" (click)="showHideChilds(menuItem)">
+            <a [ngClass]="['active']">
+              <i [ngClass]="[menuItem.icon]"></i>
+              <span>{{menuItem.name}}</span>
+              <i class="fa fa-angle-down pull-right animated flipInX" *ngIf="menuItem.children.length !== 0 && menuItem.hideChildren"></i>
+              <i class="fa fa-angle-up pull-right animated flipInX" *ngIf="menuItem.children.length !== 0 && !menuItem.hideChildren"></i>
+              <i class="fa" *ngIf="menuItem.children.length === 0"></i>
+            </a>
+            <ul class="child-menu" *ngIf="menuItem.children.length !== 0 && !menuItem.hideChildren">
+              <li *ngFor="let childMenu of menuItem.children">
+                <a href="{{menuItem.route+childMenu.route}}">
+                  <i [ngClass]="[childMenu.icon]"></i>
+                  <span>{{childMenu.name}}</span>
+                </a>
+              </li>
+            </ul>
+          </li>
+        </ul>
+      </nav>
+    </div>
+    <div id="page-container">
+      <router-outlet></router-outlet>
+    </div>
+  </div>
+</section>
+<footer>
+  This is Footer
+</footer>
