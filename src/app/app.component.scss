@@ -4,13 +4,15 @@ header {
   position: fixed;
   width: 100vw;
   height: $header-height;
-  background-color: white;
+  background-color: #f5f5f5;
   line-height: $header-height;
+  color: $light-black;  
   padding: 0 20px;
   .title {
     margin: 0;
     float: left;
     font-size: $logo-height - 10px;
+    font-weight: normal;
     .logo {
       vertical-align: middle;
       margin-top: -10px;
@@ -25,14 +27,16 @@ header {
   padding-top: $header-height;
 }
 
-#nav-container {
-  background-color: $primary-color;
-  box-shadow: $box-shadow;
+#nav-container {  
+  background-color: white;
+  position: fixed;
+  width: 100%;
 }
 
 #page-container {
-  padding: 30px 10px;
+  padding: 50px 10px 20px 10px;
   min-height: 50vh;
+  overflow: auto;
 }
 
 .parent-menu {
@@ -45,16 +49,18 @@ header {
     a {
       display: inline-block;
       text-decoration: none;
-      color: white;
+      color: $dark-black;
       transition: all 0.2s;
+      box-sizing: content-box;
       &.active,
       &:hover {
-        color: black;
-        background-color: white;
+        //background-color: $primary-color;
+        color: $primary-color;
+        border-bottom: 2px solid $primary-color;
       }
       .fa {
         font-size: 18px;
-        padding: 15px 10px;
+        padding: 10px;
       }
     }
   }
@@ -62,17 +68,16 @@ header {
     box-shadow: $box-shadow;
     padding: 0;
     position: absolute;
-    background-color: white;
     min-width: 100%;
     li {
       display: block;
       a {
-        display: block;
-        color: black;
+        display: block;  
+        background-color: white;      
         &.active,
         &:hover {
-          color: white;
-          background-color: $primary-color;
+          border-bottom: none;
+          border-left: 2px solid $primary-color;
         }
       }
     }
@@ -80,7 +85,23 @@ header {
 }
 
 footer {
-  height: $footer-height;
+  min-height: $footer-height;
   margin-top: -$footer-height;
-  background-color: white;
+  background-color: $dark-black;
+  color: $light-black;
+  padding: 10px;
+  text-align: center;
+
+  .footer-top-link{
+    li{
+      display: inline-block;
+      a{
+        color: $light-black;
+        padding: 0px 10px;
+        text-transform: uppercase;
+        text-decoration: underline;
+        font-weight: bold;
+      }
+    }
+  }
 }

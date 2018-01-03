@@ -3,10 +3,3 @@ export interface ILogin {
     password: string;
     newPassword?: string;
 }
-
-export interface ILoggedInUser {
-    firstName: string;
-    lastName: string;
-    permissions: string[];
-    userId: string;
-}

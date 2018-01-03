@@ -5,10 +5,16 @@ import { UserEditComponent } from './user-edit/user-edit.component';
 import { UserDeleteComponent } from './user-delete/user-delete.component';
 import { UserProfileComponent } from './user-profile/user-profile.component';
 
+import { UserRouting } from './user.routing';
+
+import { UserService } from './user.service';
+
 @NgModule({
   imports: [
-    CommonModule
+    CommonModule,
+    UserRouting
   ],
-  declarations: [UserCreateComponent, UserEditComponent, UserDeleteComponent, UserProfileComponent]
+  declarations: [UserCreateComponent, UserEditComponent, UserDeleteComponent, UserProfileComponent],
+  providers: [UserService]
 })
 export class UserModule { }

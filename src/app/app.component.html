@@ -1,9 +1,8 @@
 <header>
   <h1 class="title">
-    <img src="/assets/images/logo.ico" class="logo">
-    Project K Title
+    <img src="/assets/images/logo.ico" class="logo"> Project K Title
   </h1>
-  <label class="float-right">Welcome</label>
+  <label class="float-right">Welcome {{getUserDetails() ? (getUserDetails().firstName + ', ' + getUserDetails().lastName) : ''}}</label>
 </header>
 <section (click)="closeDropDowns($event)">
   <div id="container">
@@ -11,7 +10,7 @@
       <nav>
         <ul class="parent-menu">
           <li *ngFor="let menuItem of menuItems" (click)="showHideChilds(menuItem, $event)">
-            <a [ngClass]="!menuItem.hideChildren ? 'active': ''">
+            <a>
               <i [ngClass]="[menuItem.icon]"></i>
               <span>{{menuItem.name}}</span>
               <i class="fa fa-angle-down pull-right animated flipInX" *ngIf="menuItem.children.length !== 0 && menuItem.hideChildren"></i>
@@ -36,5 +35,13 @@
   </div>
 </section>
 <footer>
-  This is Footer
+  <ul class="footer-top-link">
+    <li>
+      <a>Help</a>
+    </li>
+    <li>
+      <a>Feedback</a>
+    </li>
+  </ul>
+  Copyright 1999-2017 by Refsnes Data. All Rights Reserved. Powered by W3.CSS.
 </footer>

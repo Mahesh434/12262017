@@ -1,13 +1,12 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import { ReactiveFormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 
 import { AppRoutingModule, RoutingComponent } from './app.routing';
 
 import { AppComponent } from './app.component';
 
-import { LoginService } from './login/login.service';
+import { AuthGuard } from './guards/auth.guard';
 
 @NgModule({
   declarations: [
@@ -16,11 +15,11 @@ import { LoginService } from './login/login.service';
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule,
-    ReactiveFormsModule,
-    HttpModule
+    HttpModule,
+
+    AppRoutingModule
   ],
-  providers: [LoginService],
+  providers: [AuthGuard],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

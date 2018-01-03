@@ -1,0 +1,33 @@
+{
+    "data": {
+        "id": 1,
+            "clientId": "admin",
+            "userId": "admin",
+            "firstname": "John",
+            "lastname": "Doe",
+            "email": "john.doe@gmail.com",
+            "dob": "2011-11-11",
+            "height": "165",
+            "complexion": "white",
+            "education": "B Tech",
+            "occupation": "IT Professional",
+            "maritalstatus": "Single",
+            "paternalGotram": "P Gothram",
+            "maternalGotram": "M Gothram",
+            "star": "Star User",
+            "rasi": "Leo",
+        "aboutSelf": "VGhpcyBpcyBhYm91dCBzZWxmIG9mIHRoZSB1c2VyLi4gSGVyZSBpcyB0aGUgdXBkYXRlIG9uIHVzZXIgaW5mbw==",
+            "salary": "50000",
+            "mobileno": "8889998887",
+        "address": "Blah Blah Blah Blah",
+            "photoLink": null,
+            "videoLink": null,
+            "activeInd": null,
+            "recCrtTs": null,
+            "recCrtUsrKy": null,
+            "recLstUpdtTs": null,
+            "recLstUpdtKy": null,
+            "gender": null,
+            "caste": null
+    }
+}

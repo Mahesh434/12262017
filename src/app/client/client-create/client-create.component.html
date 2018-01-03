@@ -1,53 +1,50 @@
 <form [formGroup]="clientCreateForm" (ngSubmit)="createClient()">
   <table class="form-table">
     <tr>
-      <td>Name</td>
       <td>
         <input formControlName="clientName" type="text" placeholder="Name">
       </td>
     </tr>
     <tr>
-      <td>Email</td>
       <td>
         <input formControlName="email" type="text" placeholder="Email">
       </td>
     </tr>
     <tr>
-      <td>Mobile</td>
       <td>
         <input formControlName="mobileno" type="text" placeholder="Mobile">
       </td>
     </tr>
     <tr>
-      <td>Address</td>
       <td>
-        <input formControlName="address" type="text" placeholder="Address">
+        <textarea formControlName="address" rows="5" type="text" placeholder="Address"></textarea>
       </td>
     </tr>
     <tr>
-      <td>Latitude</td>
       <td>
         <input formControlName="latitude" type="text" placeholder="Latitude">
       </td>
     </tr>
     <tr>
-      <td>Longitude</td>
       <td>
         <input formControlName="longitude" type="text" placeholder="Longitude">
       </td>
     </tr>
     <tr>
-      <td>Branding</td>
+      <td>
+        <input formControlName="clntLogo" type="text" placeholder="Logo">
+      </td>
+    </tr>
+    <tr>
       <td>
         <input formControlName="branding" type="text" placeholder="Branding">
       </td>
     </tr>
     <tr>
-      <td>
-        <td colspan="2" class="right-text">
-          <button class="pk-btn secondary-btn" type="reset">Clear</button>
-          <button class="pk-btn primary-btn" type="submit">Create</button>
-        </td>
+      <td class="right-text">
+        <button class="pk-btn secondary-btn" type="reset">Clear</button>
+        <button class="pk-btn primary-btn" type="submit">Create</button>
+      </td>
     </tr>
   </table>
 </form>

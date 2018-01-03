@@ -3,9 +3,10 @@ import { FormBuilder, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { LoginService } from '../login.service';
 
-import { ILogin, ILoggedInUser } from '../ILogin';
+import { ILogin } from '../ILogin';
+import { ILoggedInUser } from '../../IGlobal';
 
-import { PKMenu, PKMenuItem, PKCompleteMenu } from '../../app.routing';
+import { PKMenu, PKMenuItem, PKCompleteMenu } from '../../app.menu';
 
 @Component({
   selector: 'app-login',
@@ -28,19 +29,23 @@ export class LoginComponent implements OnInit {
       password: this.loginForm.value['password']
     };
 
-    PKMenu[0] = PKCompleteMenu[3];
-    PKMenu[1] = PKCompleteMenu[2];    
-    this._router.navigateByUrl('/user/my-profile');
-    
-    // this.loginService.validateLoginDetails(loginDetails)
-    //   .subscribe(loggedInDetails => {
-    //     if (loggedInDetails) {
-    //       this._router.navigateByUrl('/user/my-profile');
-    //       console.log(loggedInDetails.permissions);
-    //     }
-    //   }, error => {
-    //     console.log(error);
-    //   });
+    this.loginService.validateLoginDetails(loginDetails)
+      .subscribe(loggedInDetails => {
+        if (loggedInDetails) {
+          PKMenu.splice(0, PKMenu.length);
+          loggedInDetails.permissions.forEach(function (permission) {
+            const menuItem = PKCompleteMenu.find(function (item) {
+              return item.key === permission;
+            });
+            if (menuItem) {
+              PKMenu.push(menuItem);
+            }
+          });
+          this._router.navigateByUrl(PKMenu[0].route);
+        }
+      }, error => {
+        console.log(error);
+      });
   }
 
   ngOnInit() {

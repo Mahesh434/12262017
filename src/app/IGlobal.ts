@@ -3,3 +3,10 @@ export interface IResponse {
     message: String;
     data: any;
 }
+
+export interface ILoggedInUser {
+    firstName: string;
+    lastName: string;
+    permissions: string[];
+    userId: string;
+}

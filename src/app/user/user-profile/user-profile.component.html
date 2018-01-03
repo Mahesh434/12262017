@@ -1,3 +1,96 @@
-<p>
-  user-profile works!
-</p>
+<div *ngIf="userDetails">
+  <div class="float-left item-container">
+    <div class="center-text">
+      <i class="fa fa-user fa-4x"></i>
+    </div>
+    <div>
+      <b>Name:</b> {{userDetails.firstname}}, {{userDetails.lastname}} </div>
+    <div>
+      <b>Email:</b> {{userDetails.email}}</div>
+    <div>
+      <b>Phone:</b> {{userDetails.mobileno}} </div>
+    <div></div>
+  </div>
+  <div class="float-left item-container">
+    <table>
+      <tbody>
+        <tr>
+          <td><b>First Name:</b></td>
+          <td>{{userDetails.firstname}}</td>
+        </tr>
+        <tr>
+          <td><b>Last Name:</b></td>
+          <td>{{userDetails.lastname}}</td>
+        </tr>
+        <tr>
+          <td><b>Email:</b></td>
+          <td>{{userDetails.email}}</td>
+        </tr>
+        <tr>
+          <td><b>DOB:</b></td>
+          <td>{{userDetails.dob}}</td>
+        </tr>
+        <tr>
+          <td><b>Height(in CM):</b></td>
+          <td>{{userDetails.height}}</td>
+        </tr>
+        <tr>
+          <td><b>Complexion:</b></td>
+          <td>{{userDetails.complexion}}</td>
+        </tr>
+        <tr>
+          <td><b>Education:</b></td>
+          <td>{{userDetails.education}}</td>
+        </tr>
+        <tr>
+          <td><b>Occupation:</b></td>
+          <td>{{userDetails.occupation}}</td>
+        </tr>
+        <tr>
+          <td><b>Marital Status:</b></td>
+          <td>{{userDetails.maritalstatus}}</td>
+        </tr>
+        <tr>
+          <td><b>Parental Gothram:</b></td>
+          <td>{{userDetails.paternalGotram}}</td>
+        </tr>
+        <tr>
+          <td><b>Marital Gothram:</b></td>
+          <td>{{userDetails.maternalGotram}}</td>
+        </tr>
+        <tr>
+          <td><b>Star:</b></td>
+          <td>{{userDetails.star}}</td>
+        </tr>
+        <tr>
+          <td><b>Rasi:</b></td>
+          <td>{{userDetails.rasi}}</td>
+        </tr>
+        <tr>
+          <td><b>Salary:</b></td>
+          <td>{{userDetails.salary}}</td>
+        </tr>
+        <tr>
+          <td><b>Mobile No:</b></td>
+          <td>{{userDetails.mobileno}}</td>
+        </tr>
+        <tr>
+          <td><b>Gender:</b></td>
+          <td>{{userDetails.gender}}</td>
+        </tr>
+        <tr>
+          <td><b>Caste:</b></td>
+          <td>{{userDetails.caste}}</td>
+        </tr>
+        <tr>
+          <td><b>About:</b></td>
+          <td>{{userDetails.aboutSelf}}</td>
+        </tr>
+        <tr>
+          <td><b>Address:</b></td>
+          <td>{{userDetails.address}}</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>

@@ -4,31 +4,54 @@
 
 body {
   margin: 0;
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  font-family: "DINCondensed-Regular", 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   font-size: 14px;
   letter-spacing: 0.02em;
 }
 
 .form-table {
   margin: 0 auto;
-  background-color: white;
-  padding: 20px 30px;
   box-shadow: 1px 1px 3px 0px rgba(0, 0, 0, 0.2);
+  background-color: white;
+  border-radius: 20px;
+  padding: 10px 20px;
 }
 
 .form-table tr td {
-  padding: 5px;
+  padding: 5px 10px;
 }
 
+.form-table tr th {
+  color: black;
+  padding: 5px 0;
+}
+
+
 input[type="text"],
-input[type="password"] {
-  padding: 4px 5px;
+input[type="password"],
+textarea {
+  padding: 10px;
+  border-radius: 5px;
+  background-color: transparent;
+  border: 1px solid #6a6a6a;
+  color: black;
+  text-align: center;
+  width: 100%;
+}
+textarea{
+  text-align: left;
+  resize: vertical;
+}
+
+input[type="text"]:focus, 
+input[type="password"]:focus{
+  outline: none;
 }
 
 .pk-btn {
   border: none;
-  padding: 5px 15px;
-  border-radius: 15px;
+  padding: 10px 30px;
+  border-radius: 5px;
   outline: none;
   cursor: pointer;
 }
@@ -38,12 +61,17 @@ input[type="password"] {
 }
 
 .primary-btn {
-  background-color: #7eb73d;
   color: white;
+  border-color: #088837;  
+  background-color: #29b35b;
 }
 
 .right-text {
   text-align: right;
+}
+
+.float-left{
+  float: left;
 }
 
 .float-right {
@@ -52,4 +80,36 @@ input[type="password"] {
 
 .center-text {
   text-align: center;
+}
+
+.big-container{
+  border-radius: 5px;
+  padding: 10px;
+  box-shadow: 1px 1px 3px 0px rgba(0, 0, 0, 0.2);
+  background-color: white;
+}
+
+.big-container .title{
+  margin: 0;
+  margin-bottom: 10px;
+}
+
+.big-container .content{
+  margin: 0;
+}
+
+.item-container{
+  margin: 0px 10px;
+  padding: 10px;
+  border-radius: 5px;
+  box-shadow: 1px 1px 3px 0px rgba(0, 0, 0, 0.2);
+  background-color: white;
+}
+
+.box-shadow{
+  box-shadow: 1px 1px 3px 0px rgba(0, 0, 0, 0.2);
+}
+
+a{
+  text-decoration: underline;
 }

@@ -1,7 +1,9 @@
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
 
-import { PKMenu, PKMenuItem } from './app.routing';
+import { PKMenu, PKMenuItem } from './app.menu';
+import { ProjectKUtils } from './app.utils';
+import { ILoggedInUser } from './IGlobal';
 
 @Component({
   selector: 'app-root',
@@ -36,6 +38,10 @@ export class AppComponent {
         this.menuItems[i].hideChildren = true;
       }
     }
+  }
+
+  getUserDetails(): ILoggedInUser {
+    return ProjectKUtils.prototype.getLoggedInUserDetails();
   }
 
 }
