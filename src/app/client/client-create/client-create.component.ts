@@ -25,7 +25,6 @@ export class ClientCreateComponent implements OnInit {
   });
 
   createClient(): void {
-    console.log(this.clientCreateForm.value);
     const clientDetails: IClient = {
       clientName: this.clientCreateForm.value['clientName'],
       mobileno: this.clientCreateForm.value['mobileno'],

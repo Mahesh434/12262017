@@ -22,6 +22,7 @@ export class UserProfileComponent implements OnInit {
       .subscribe(userDetails => {
         if (userDetails) {
           this.userDetails = userDetails;
+          this.userDetails.aboutSelf = window.atob(this.userDetails.aboutSelf);
         }
       }, error => {
         console.log(error);

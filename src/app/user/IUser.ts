@@ -1,7 +1,7 @@
 export interface IUser {
-    id: number;
-    clientId: string;
-    userId: string;
+    id?: number;
+    clientId?: string;
+    userId?: string;
     firstname: string;
     lastname: string;
     email: string;
@@ -21,11 +21,6 @@ export interface IUser {
     address: string;
     photoLink: string;
     videoLink: string;
-    activeInd: string;
-    recCrtTs: string;
-    recCrtUsrKy: string;
-    recLstUpdtTs: string;
-    recLstUpdtKy: string;
     gender: string;
     caste: string;
 }

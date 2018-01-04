@@ -14,7 +14,8 @@ export const PKCompleteMenu: PKMenuItem[] = [
         key: 'USER', route: '/user', icon: 'fa fa-user-circle-o', name: 'User', children: [
             { key: 'USER_CREATE', route: '/create', icon: 'fa fa-user-plus', name: 'Create', children: [], hideChildren: true },
             { key: 'USER_EDIT', route: '/edit', icon: 'fa fa-pencil-square-o', name: 'Edit', children: [], hideChildren: true },
-            { key: 'USER_DELETE', route: '/delete', icon: 'fa fa-trash-o', name: 'Delete', children: [], hideChildren: true }
+            { key: 'USER_DELETE', route: '/delete', icon: 'fa fa-trash-o', name: 'Delete', children: [], hideChildren: true },
+            { key: 'USER_ALL', route: '/all', icon: 'fa fa-address-book-o', name: 'All', children: [], hideChildren: true }
         ], hideChildren: true
     },
     {
