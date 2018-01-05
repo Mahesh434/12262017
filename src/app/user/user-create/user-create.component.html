@@ -1,91 +1,116 @@
 <form [formGroup]="userCreateForm" (ngSubmit)="createUser()">
-  <table class="form-table">
+  <table class="form-table" *ngIf="masterFields">
     <tr>
       <td>
+        <label>First Name:</label>
         <input formControlName="firstname" type="text" placeholder="First Name">
       </td>
       <td>
+        <label>Last Name:</label>
         <input formControlName="lastname" type="text" placeholder="Last Name">
       </td>
     </tr>
     <tr>
       <td>
+        <label>Gender:</label>
         <input formControlName="gender" type="text" placeholder="Gender">
       </td>
       <td>
+        <label>Mobile:</label>
         <input formControlName="mobileno" type="text" placeholder="Mobile">
       </td>
     </tr>
     <tr>
       <td colspan="2">
+        <label>Email:</label>
         <input formControlName="email" type="text" placeholder="Email">
       </td>
     </tr>
     <tr>
       <td>
+        <label>Date of Birth(yyyy-MM-dd):</label>
         <input formControlName="dob" type="text" placeholder="Date of Birth(yyyy-MM-dd)">
       </td>
       <td>
+        <label>Height(in CM):</label>
         <input formControlName="height" type="text" placeholder="Height(in CM)">
       </td>
     </tr>
     <tr>
       <td>
+        <label>Complexion:</label>
         <input formControlName="complexion" type="text" placeholder="Complexion">
       </td>
       <td>
+        <label>Education:</label>
         <input formControlName="education" type="text" placeholder="Education">
       </td>
     </tr>
     <tr>
       <td>
+        <label>Occupation:</label>
         <input formControlName="occupation" type="text" placeholder="Occupation">
       </td>
       <td>
+        <label>Marital Status:</label>
         <input formControlName="maritalstatus" type="text" placeholder="Marital Status">
       </td>
     </tr>
     <tr>
       <td>
+        <label>Parental Gotram:</label>
         <input formControlName="paternalGotram" type="text" placeholder="Parental Gotram">
       </td>
       <td>
+        <label>Maternal Gotram:</label>
         <input formControlName="maternalGotram" type="text" placeholder="Maternal Gotram">
       </td>
     </tr>
     <tr>
       <td>
-        <input formControlName="star" type="text" placeholder="Star">
+        <label>Star:</label>
+        <select formControlName="star">
+          <option *ngFor="let star of masterFields.STAR" value="{{star.fieldName}}">{{star.fieldName}}</option>
+        </select>
       </td>
       <td>
-        <input formControlName="rasi" type="text" placeholder="Rasi">
+        <label>Rasi:</label>
+        <select formControlName="rasi">
+          <option *ngFor="let rasi of masterFields.RASI" value="{{rasi.fieldName}}">{{rasi.fieldName}}</option>
+        </select>
       </td>
     </tr>
     <tr>
       <td>
+        <label>Salary:</label>
         <input formControlName="salary" type="text" placeholder="Salary">
       </td>
       <td>
+        <label>Caste:</label>
         <input formControlName="caste" type="text" placeholder="Caste">
       </td>
     </tr>
     <tr>
       <td colspan="2">
+        <label>About Self:</label>
         <textarea formControlName="aboutSelf" rows="5" type="text" placeholder="About Self"></textarea>
       </td>
     </tr>
     <tr>
       <td colspan="2">
+        <label>Address:</label>
         <textarea formControlName="address" rows="5" type="text" placeholder="Address"></textarea>
       </td>
     </tr>
     <tr>
       <td colspan="2">
+        <label>Photo Link:</label>
         <input formControlName="photoLink" type="text" placeholder="Photo Link">
       </td>
     </tr>
     <tr>
       <td colspan="2">
+        <label>Video Link:</label>
         <input formControlName="videoLink" type="text" placeholder="Video Link">
       </td>
     </tr>

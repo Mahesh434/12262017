@@ -15,7 +15,7 @@ const userRoutes: Routes = [
             { path: 'edit', component: UserEditComponent },
             { path: 'delete', component: UserDeleteComponent },
             { path: 'all', component: UserAllComponent },
-            { path: 'my-profile', component: UserProfileComponent }
+            { path: ':id', component: UserProfileComponent }
         ], canActivate: [AuthGuard]
     },
 ];

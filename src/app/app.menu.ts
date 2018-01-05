@@ -19,7 +19,7 @@ export const PKCompleteMenu: PKMenuItem[] = [
         ], hideChildren: true
     },
     {
-        key: 'USER_MY_PROFILE', route: '/user/my-profile', icon: 'fa fa-user-circle-o',
+        key: 'USER_MY_PROFILE', route: '/user/my', icon: 'fa fa-user-circle-o',
         name: 'My Profile', children: [], hideChildren: true
     },
     {

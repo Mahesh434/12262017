@@ -2,9 +2,13 @@ import { Component, OnInit } from '@angular/core';
 import { ProjectKUtils } from '../../app.utils';
 import { ILoggedInUser } from '../../IGlobal';
 
+import { Router, ActivatedRoute, ParamMap } from '@angular/router';
+
 import { UserService } from '../user.service';
 
 import { IUser } from '../IUser';
+
+import 'rxjs/add/operator/switchMap';
 
 @Component({
   selector: 'app-user-profile',
@@ -15,18 +19,19 @@ export class UserProfileComponent implements OnInit {
 
   userDetails: IUser;
 
-  constructor(private userService: UserService) { }
+  constructor(private userService: UserService,
+    private route: ActivatedRoute,
+    private router: Router) { }
 
   ngOnInit() {
-    this.userService.getUserDetails(ProjectKUtils.prototype.getLoggedInUserDetails().userId)
-      .subscribe(userDetails => {
-        if (userDetails) {
-          this.userDetails = userDetails;
-          this.userDetails.aboutSelf = window.atob(this.userDetails.aboutSelf);
-        }
-      }, error => {
-        console.log(error);
-      });
+    const userDetails = this.route.paramMap
+      .switchMap((params: ParamMap) =>
+        this.userService.getUserDetails(params.get('id') === 'my' ?
+          ProjectKUtils.prototype.getLoggedInUserDetails().userId : params.get('id')));
+
+    userDetails.subscribe(fetchedDetails => {
+      this.userDetails = fetchedDetails;
+    }, error => { console.log(error); });
   }
 
 }

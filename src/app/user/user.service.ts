@@ -58,4 +58,18 @@ export class UserService {
                 return null;
             });
     }
+
+    getMasterFields(): Observable<any> {
+        const headers = new Headers({ 'Content-Type': 'application/json' });
+        const options = new RequestOptions({ headers: headers });
+
+        return this.http.get('/ProjectK/rest/mstrFields/getAll', options)
+            .map((res: Response) => {
+                const body: IResponse = res.json();
+                if (body.statusCode === 200) {
+                    return body.data;
+                }
+                return null;
+            });
+    }
 }

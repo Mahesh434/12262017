@@ -3,6 +3,7 @@ import { FormBuilder, Validators } from '@angular/forms';
 
 import { UserService } from '../user.service';
 import { IUser } from '../IUser';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-user-create',
@@ -11,7 +12,7 @@ import { IUser } from '../IUser';
 })
 export class UserCreateComponent implements OnInit {
 
-  constructor(public fb: FormBuilder, private userService: UserService) { }
+  constructor(public fb: FormBuilder, private userService: UserService, private router: Router) { }
 
   public userCreateForm = this.fb.group({
     firstname: ['', Validators.required],
@@ -36,6 +37,8 @@ export class UserCreateComponent implements OnInit {
     photoLink: ['', Validators.required],
     videoLink: ['', Validators.required]
   });
+
+  masterFields: {};
 
   createUser(): void {
     const userDetails: IUser = {
@@ -64,13 +67,17 @@ export class UserCreateComponent implements OnInit {
 
     this.userService.createUser(userDetails)
       .subscribe(userId => {
-        console.log(userId);
+        this.router.navigate(['/user/all']);
       }, error => {
         console.log(error);
       });
   }
 
   ngOnInit() {
+    this.userService.getMasterFields()
+      .subscribe(masterFields => {
+        this.masterFields = masterFields;
+      }, error => console.log(error));
   }
 
 }
