@@ -30,6 +30,7 @@ export class AppComponent {
     event.stopPropagation();
     if (menuItem.children.length === 0) {
       this.router.navigate([menuItem.route]);
+      this.showHideMenu();
     }
     for (let i = 0; i < this.menuItems.length; i++) {
       if (menuItem.key === this.menuItems[i].key) {
@@ -37,6 +38,17 @@ export class AppComponent {
       } else {
         this.menuItems[i].hideChildren = true;
       }
+    }
+  }
+
+  showHideMenu(): void {
+    const navId = 'nav-container';
+    const menu = document.getElementById(navId);
+
+    if (!menu.classList.contains('minimize')) {
+      menu.classList.add('minimize');
+    } else {
+      menu.classList.remove('minimize');
     }
   }
 

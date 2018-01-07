@@ -1,33 +1,41 @@
-<div *ngFor="let user of users" class="item-container">
-  <table>
-    <tr>
-      <td>First Name</td>
-      <td>{{user.firstname}}</td>
-    </tr>
-    <tr>
-      <td>Last Name</td>
-      <td>{{user.lastname}}</td>
-    </tr>
-    <tr>
-      <td>Email</td>
-      <td>{{user.email}}</td>
-    </tr>
-    <tr>
-      <td>DOB</td>
-      <td>{{user.dob}}</td>
-    </tr>
-    <tr>
-      <td>Mobile</td>
-      <td>{{user.mobileno}}</td>
-    </tr>
-    <tr>
-      <td>Address</td>
-      <td>{{user.address}}</td>
-    </tr>
-    <tr>
-      <td>About</td>
-      <td>{{user.aboutSelf}}</td>
-    </tr>
-  </table>
-  <a routerLink="/user/{{user.userId}}">View Details</a>
+<div class="profile-card-container">
+  <div *ngFor="let user of users" class="profile-card">
+    <div class="center-text">
+      <img src="/assets/images/logo.ico" class="profile-card-img">
+    </div>
+    <table>
+      <tr>
+        <td>First Name</td>
+        <td>{{user.firstname}}</td>
+      </tr>
+      <tr>
+        <td>Last Name</td>
+        <td>{{user.lastname}}</td>
+      </tr>
+      <tr>
+        <td>Email</td>
+        <td>{{user.email}}</td>
+      </tr>
+      <tr>
+        <td>DOB</td>
+        <td>{{user.dob}}</td>
+      </tr>
+      <tr>
+        <td>Mobile</td>
+        <td>{{user.mobileno}}</td>
+      </tr>
+      <tr>
+        <td>Address</td>
+        <td>{{user.address}}</td>
+      </tr>
+      <tr>
+        <td>About</td>
+        <td>
+          <p class="long-text">{{user.aboutSelf}}
+          </p>
+        </td>
+      </tr>
+    </table>
+    <a routerLink="/user/{{user.userId}}">View Details</a>
+  </div>
 </div>

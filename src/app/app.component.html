@@ -2,7 +2,8 @@
   <h1 class="title">
     <img src="/assets/images/logo.ico" class="logo"> Project K Title
   </h1>
-  <label class="float-right">Welcome {{getUserDetails() ? (getUserDetails().firstName + ', ' + getUserDetails().lastName) : ''}}</label>
+  <label class="float-right header-user-details">Welcome {{getUserDetails() ? (getUserDetails().firstName + ', ' + getUserDetails().lastName) : ''}}</label>
+  <a class="float-right" id="menu-access-link" (click)="showHideMenu()"><i class="fa fa-bars"></i></a>
 </header>
 <section (click)="closeDropDowns($event)">
   <div id="container">
@@ -18,7 +19,7 @@
               <i class="fa" *ngIf="menuItem.children.length === 0"></i>
             </a>
             <ul class="child-menu" *ngIf="menuItem.children.length !== 0 && !menuItem.hideChildren">
-              <li *ngFor="let childMenu of menuItem.children">
+              <li *ngFor="let childMenu of menuItem.children" (click)="showHideMenu()">
                 <a routerLink="{{menuItem.route+childMenu.route}}">
                   <i [ngClass]="[childMenu.icon]"></i>
                   <span>{{childMenu.name}}</span>

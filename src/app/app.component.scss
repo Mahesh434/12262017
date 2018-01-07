@@ -33,6 +33,10 @@ header {
   width: 100%;
 }
 
+#menu-access-link{
+  display: none;
+}
+
 #page-container {
   padding: 50px 10px 20px 10px;
   min-height: 50vh;
@@ -54,9 +58,9 @@ header {
       box-sizing: content-box;
       &.active,
       &:hover {
-        //background-color: $primary-color;
-        color: $primary-color;
-        border-bottom: 2px solid $primary-color;
+        background-color: $primary-color;
+        color: white;
+        //border-bottom: 2px solid $primary-color;
       }
       .fa {
         font-size: 18px;
@@ -69,15 +73,17 @@ header {
     padding: 0;
     position: absolute;
     min-width: 100%;
+    background-color: white;
+    z-index: 1;
     li {
       display: block;
       a {
         display: block;  
-        background-color: white;      
+        //background-color: white;      
         &.active,
         &:hover {
-          border-bottom: none;
-          border-left: 2px solid $primary-color;
+          //border-bottom: none;
+          //border-left: 2px solid $primary-color;
         }
       }
     }
@@ -103,5 +109,46 @@ footer {
         font-weight: bold;
       }
     }
+  }
+}
+
+
+/* Medium screens */
+@media all and (max-width: 800px) {
+  header {
+    position: relative;
+  } 
+  
+  #container {
+    padding-top: 0;
+  }
+
+  #page-container{
+    padding-top: 10px;
+  }
+
+  #nav-container{
+    position: relative;
+  }
+
+  #nav-container.minimize{
+    display: none;
+  }
+
+  #menu-access-link{
+    display: inline-block;
+  }
+
+  .parent-menu {
+    li {
+      width: 100%;
+      a{
+        display: block;
+      }
+    }
+  }
+
+  .header-user-details{
+    display: none;
   }
 }
